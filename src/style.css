@@ -1,5 +1,5 @@
-#home, #about {
-  height: 100vh;
+#home, #about, #contact {
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -70,6 +70,26 @@ body {
   background-color: white;
   color: black;
   border: 3px solid black;
+}
+
+#contact {
+  background: url("./images/contact-background.png") no-repeat;
+  background-size: cover;
+  text-shadow: 3px 3px 3px black;
+  position: relative;
+}
+
+#contact div div:last-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#footer {
+  width: 100vw;
+  height: 15vh;
 }
 
 @media screen and (max-width: 767px) {
