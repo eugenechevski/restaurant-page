@@ -19,13 +19,13 @@
 <body>
 
     <!-- Home -->
-    <section id="home">
+    <section id="home" class="d-flex flex-column">
         <nav class="navbar navbar-expand-md p-4">
             <div class="container-fluid">
                 <span class="navbar-brand fs-1">The Art of Pizza</span>
-                <button class="btn d-md-none"
+                <button id="hamburgerBtn"
+                        class="btn d-md-none position-fixed end-0 me-3"
                         type="button" 
-                        data-bs-toggle="offcanvas" 
                         data-bs-target="#navContent" 
                         aria-controls="navContent"
                 >
@@ -33,13 +33,13 @@
                 </button>
                 <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="navContent" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-body d-flex justify-content-center justify-content-md-end align-items-center fs-4">
-                        <span id="close" class="fas fa-times btn d-md-none position-absolute top-0 start-0 text-white fs-1" type="button" data-bs-dismiss="offcanvas"></span>
+                        <span id="close" class="fas fa-times btn d-md-none position-absolute top-0 start-0 text-white fs-1" data-bs-dismiss="offcanvas"></span>
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a id="homeLink" href="#home" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a id="menuLink" href="" class="nav-link">Menu</a>
+                                <a id="menuLink" href="#menu" class="nav-link">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#about" class="nav-link">About</a>
@@ -53,52 +53,52 @@
             </div>
         </nav>
 
-        <!-- Intro  -->
-        <div id="intro" class="container-md w-75">
-            <p class="fs-2 text-center">
-                <mark>We offer the best pizza you’ve ever tried.
-                Produced with the most fresh ingredients
-                and baked by the most skilled hands of our artists.
-                Our pizza is not just a pizza is
-                <u>The Art of Pizza</u>.</mark>
-            </p>
-            <div id="orderBtn" class="btn fs-2">Order now</div>
+        <div class="container-fluid d-flex flex-grow-1 align-items-center justify-content-center">
+            <!-- Intro  -->
+            <div id="intro" class="container-md w-75">
+                <p class="fs-2 text-center">
+                    <mark>We offer the best pizza you’ve ever tried.
+                    Produced with the most fresh ingredients
+                    and baked by the most skilled hands of our artists.
+                    Our pizza is not just a pizza is
+                    <u>The Art of Pizza</u>.</mark>
+                </p>
+                <div id="orderBtn" class="btn fs-2">Order now</div>
+            </div>
+    
+            <!-- Menu -->
+            <!-- Hidden by default -->
+            <div id="menu" class="border border-5 border-dark rounded-3">
+                <div class="container d-flex justify-content-around">
+                    <button class="tab fs-2 btn">Pizza</button>
+                    <button class="tab fs-2 btn">Beverages</button>
+                    <button class="tab fs-2 btn">Pasta</button>
+                </div>
+                <div id="content" class="d-flex flex-column align-items-center justify-content-center">
+                    <!-- Populated by modules -->   
+                </div>
+            </div>
         </div>
 
-        <!-- Menu -->
-        <!-- Hidden by default -->
-        <div id="menu" class="border border-5 border-dark rounded-3">
-            <div class="container d-flex justify-content-around">
-                <button class="tab fs-2 btn active">Pizza</button>
-                <button class="tab fs-2 btn">Beverages</button>
-                <button class="tab fs-2 btn">Pasta</button>
-            </div>
-            <div id="content" class="d-flex flex-column align-items-center justify-content-center">
-                <!-- Populated by modules -->   
-            </div>
-        
-        </div>
     </section>
 
     <!-- About-->
-    <section id="about">
-        <div class="container-fluid h-100 p-5">
-            <div class="h1">Who We Are ?</div>
-            <div class="container-fluid d-flex flex-wrap flex-md-nowrap align-items-center justify-content-center h-100">
-                <div class="d-flex flex-column align-items-center">
-                    <img class="border border-dark border-5 rounded-circle w-75" src="653b0efd3c8caad70cca.png" alt="">
-                    <div class="h2 text-center mt-4"><b>Chef Fabrizio</b></div>
-                </div>
-                <p class="fs-2 text-center w-75">
-                    <q><i>
-                        Our unforgettably-delicious pizza 
-                        is made with unparalleled experience 
-                        and thorough approach, inherited
-                        from years of trial and error of achieving the greatest taste. 
-                        <u>We are The Art Of Pizza.</u>
-                    </i></q>
-                </p>
+    <section id="about" class="d-flex flex-column p-3">
+        <div class="h1">Who We Are ?</div>
+        <div class="container-fluid align-self-center flex-grow-1 d-flex flex-wrap flex-md-nowrap align-items-center justify-content-center">
+            <div class="d-flex flex-column align-items-center">
+                <img class="border border-dark border-5 rounded-circle w-75" src="653b0efd3c8caad70cca.png" alt="">
+                <div class="h2 text-center mt-4"><b>Chef Fabrizio</b></div>
             </div>
+            <p class="fs-2 text-center w-75">
+                <q><i>
+                    Our unforgettably-delicious pizza 
+                    is made with unparalleled experience 
+                    and thorough approach, inherited
+                    from years of trial and error of achieving the greatest taste. 
+                    <u>We are The Art Of Pizza.</u>
+                </i></q>
+            </p>
         </div>
     </section>
 
@@ -127,7 +127,7 @@
     </section>
 
     <!-- Footer -->
-    <section id="footer">
+    <section id="footer" class="border border-light border-4">
         <div class="container-fluid bg-black h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="h5 text-white mt-4">
                 Created by Yauheni Khvashcheuski &copy; 2021
