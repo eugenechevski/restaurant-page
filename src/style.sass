@@ -29,9 +29,11 @@ body
 
 #home
     @extend %section-props
-    position: relative
     background: url('./images/home-background.jpg') no-repeat
     background-size: cover
+
+#hamburgerBtn
+    z-index: 999
 
 .navbar-brand
     font-family: $brand-font
@@ -44,11 +46,6 @@ body
    opacity: 0.5
 
 #intro
-    position: absolute
-    top: 50%
-    left: 50%
-    transform: translate(-50%, -50%)
-
     p
         @include navbar-theme
         line-height: 185%
@@ -64,9 +61,7 @@ body
 
 #menu
     display: none
-    min-width: 50%
-    margin-left: 10%
-    margin-right: 10%
+    min-width: 75%
     background-color: rgba(255, 255, 255, 0.5)
 
 .items
@@ -104,9 +99,7 @@ body
     width: 100vw
     height: 15vh
 
+
 @media screen and ( max-width: 767px)
     .offcanvas-body
         background: url('./images/home-background.jpg') no-repeat
-
-
-

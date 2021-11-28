@@ -21,9 +21,12 @@ body {
 }
 
 #home {
-  position: relative;
   background: url("./images/home-background.jpg") no-repeat;
   background-size: cover;
+}
+
+#hamburgerBtn {
+  z-index: 999;
 }
 
 .navbar-brand {
@@ -43,14 +46,6 @@ body {
 
 .nav-link:hover {
   opacity: 0.5;
-}
-
-#intro {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
 }
 
 #intro p {
@@ -74,9 +69,7 @@ body {
 
 #menu {
   display: none;
-  min-width: 50%;
-  margin-left: 10%;
-  margin-right: 10%;
+  min-width: 75%;
   background-color: rgba(255, 255, 255, 0.5);
 }
 

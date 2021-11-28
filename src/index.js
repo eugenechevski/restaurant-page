@@ -1,3 +1,8 @@
+/**
+ * The top-level module imports all the other modules.
+ */
+
+
 import './style.css';
 import renderPizza from './menu_modules/menu_pizza';
 import renderBeverages from './menu_modules/menu_beverages'
@@ -5,6 +10,14 @@ import renderPasta from './menu_modules/menu_pasta';
 
 
 (function() {
+    // Fix the offcanvas
+    var myOffcanvas = document.getElementById('navContent');
+    var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+    document.getElementById("hamburgerBtn").addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        bsOffcanvas.toggle();
+    });
 
     // Grab elements
 
@@ -17,8 +30,9 @@ import renderPasta from './menu_modules/menu_pasta';
     const elMenuLink = document.getElementById('menuLink');
     const elOrderBtn = document.getElementById('orderBtn');
     
-    var currentActive; // Keeps track of a currently open tab
+    var currentActive; // Keeps track of a currently-open tab
     
+
     // Attach event-listeners
 
     elHomeLink.addEventListener('click', () => {
@@ -34,13 +48,11 @@ import renderPasta from './menu_modules/menu_pasta';
             }
 
             // Update the current tab
-
             currentActive.classList.remove('active');  
             tab.classList.add('active');
             currentActive = tab;
 
             // Render the content 
-
             let tabName = tab.textContent;
             let renderer;
             if (tabName == 'Pizza') {
@@ -55,17 +67,12 @@ import renderPasta from './menu_modules/menu_pasta';
         });
     });
 
-    elMenuLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMenu();
-    });
-
-    elOrderBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        showMenu();
-    });
+    [elMenuLink, elOrderBtn].map(el => el.addEventListener('click', showMenu));
     
+
+    /**
+     * A handler for showing the menu.
+     */
     function showMenu() {
         elHomeIntro.style.display = 'none';
         elMenu.style.display = 'block';
@@ -75,9 +82,13 @@ import renderPasta from './menu_modules/menu_pasta';
             elRenderContent.firstChild.remove();
         }
 
+        // In case user clicked on the menu-link while the menu was open
+        if (currentActive != null) {
+            currentActive.classList.remove('active');
+        } 
         currentActive = elTabs[0];
+        currentActive.classList.add('active');
+
         renderPizza(elRenderContent);
     }
 })();
-
-
