@@ -62,6 +62,27 @@ body
         color: black
         border: 3px solid black
 
+#menu
+    display: none
+    min-width: 50%
+    margin-left: 10%
+    margin-right: 10%
+    background-color: rgba(255, 255, 255, 0.5)
+
+.items
+    display: flex
+    flex-direction: column
+    width: 70%
+    border-bottom: 3px solid black
+
+    div
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+
+.active
+    text-decoration: underline
+
 #about
     @extend %section-props
 

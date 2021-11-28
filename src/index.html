@@ -33,13 +33,13 @@
                 </button>
                 <div class="offcanvas offcanvas-end w-100" tabindex="-1" id="navContent" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-body d-flex justify-content-center justify-content-md-end align-items-center fs-4">
-                        <span class="fas fa-times btn d-md-none position-absolute top-0 start-0 text-white fs-1" data-bs-dismiss="offcanvas"></span>
+                        <span id="close" class="fas fa-times btn d-md-none position-absolute top-0 start-0 text-white fs-1" type="button" data-bs-dismiss="offcanvas"></span>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#home" class="nav-link">Home</a>
+                                <a id="homeLink" href="#home" class="nav-link">Home</a>
                             </li>
-                            <li id="menuLink" class="nav-item">
-                                <a href="" class="nav-link">Menu</a>
+                            <li class="nav-item">
+                                <a id="menuLink" href="" class="nav-link">Menu</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#about" class="nav-link">About</a>
@@ -63,6 +63,20 @@
                 <u>The Art of Pizza</u>.</mark>
             </p>
             <div id="orderBtn" class="btn fs-2">Order now</div>
+        </div>
+
+        <!-- Menu -->
+        <!-- Hidden by default -->
+        <div id="menu" class="border border-5 border-dark rounded-3">
+            <div class="container d-flex justify-content-around">
+                <button class="tab fs-2 btn active">Pizza</button>
+                <button class="tab fs-2 btn">Beverages</button>
+                <button class="tab fs-2 btn">Pasta</button>
+            </div>
+            <div id="content" class="d-flex flex-column align-items-center justify-content-center">
+                <!-- Populated by modules -->   
+            </div>
+        
         </div>
     </section>
 
